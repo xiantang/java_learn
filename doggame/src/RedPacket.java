@@ -1,0 +1,19 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class RedPacket extends Rectangle{
+    public  boolean visible=true;
+    public  Image image =new ImageIcon("src/imges/red.png").getImage();
+//    public RedPacket(int x, int y, int width, int height) {
+
+    public RedPacket(int x, int y, int width, int height) {
+        super(x, y, width, height);
+
+    }
+
+
+
+    public  void  drawSelf(Graphics g){
+        g.drawImage(image,x,y,width,height,null);
+    }
+}
