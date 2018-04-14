@@ -56,22 +56,19 @@ public class MyPanel extends JPanel implements KeyListener {
 
 
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            if (moveThread.Upthread.isAlive()) {
-                //如果是线程还在存活的话 就不能第二次弹跳
-//                System.out.println("dasdasdasdasdas");
-                player.Up = false;
-//        System.out.println("---------------------------");
+
+//
+            if (player.Up==-1){
+                player.Up=1;
             }
+
 //
-            else {
-                player.Up = true;
 //
-//        }
 //            System.out.println(moveThread.Upthread.isAlive()+"fsdsdfsdsdf");
 
             }
         }
-    }
+
 
     @Override
     public void keyReleased(KeyEvent e) {
@@ -87,13 +84,7 @@ public class MyPanel extends JPanel implements KeyListener {
 
         }
         //松开键盘 如果线程还存活就设置为false
-        else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
 
-            player.Up = false;
-//            System.out.println("向右");
-
-
-        }
     }
 //
 //    protected void paintComponent(Graphics g) {

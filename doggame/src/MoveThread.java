@@ -16,7 +16,7 @@ public class MoveThread implements Runnable {
     public void run() {
 
         while (true) {
-            this.Upthread = new UpThread();
+            this.Upthread = new UpThread(player);
             try {
 
                 Thread.currentThread().sleep(25);
@@ -26,11 +26,11 @@ public class MoveThread implements Runnable {
 //            System.out.println(player.Left);
 //            System.out.println(player.Right);
 
-            if (player.Up) {
-
-                player.Up=false;
-
+            if (player.Up==1) {
+                System.out.println("up");
+                player.Up=0;
                 Upthread.start();
+//                Upthread.resume();
 //                Upthread.join();
 
             } else if (player.Right) {

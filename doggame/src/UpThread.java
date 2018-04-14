@@ -1,7 +1,13 @@
 public class UpThread extends Thread {
+    Player player;
+
+    public UpThread(Player player) {
+        this.player = player;
+    }
+
     @Override
     public void run() {
-
+        player.Up=0;
 
             try {
 //                System.out.println("向上");
@@ -27,7 +33,7 @@ public class UpThread extends Thread {
                 e.printStackTrace();
             }
 //                 player.Up=true;
-
+        player.Up=-1;
         }
     }
 

@@ -12,7 +12,7 @@ public class Player {
 
     public  boolean Left=false;
     public  boolean Right=false;
-    public  boolean Up=false; //人物对象的每个方向的布尔值
+    public  int Up=-1; //人物  -1 玩家在平地 可以上去  0表示人物在空中无法按下第二下  1表示人物上天了
 
     //一定要写对路径  而且要用image icon
 
