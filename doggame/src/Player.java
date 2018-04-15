@@ -6,6 +6,7 @@ public class Player {
     public  static int y;
     public  static int width=71;
     public  static int height=53;
+    public    int score=0;
 //    public  int spring=10;
     //    public  static Image bg=new ImageIcon("src/imges/地图.png").getImage();
     public  Image image =new ImageIcon("src/imges/dogx.png").getImage();
