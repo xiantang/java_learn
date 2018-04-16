@@ -12,7 +12,7 @@ public class MyPanel extends JPanel implements KeyListener {
     public Player player;
     public Thread thread1;
     public MoveThread moveThread;
-
+    public  Gravity gravity;
     public MyPanel(int panelWidth, int panelHeight) {
         setLayout(null);
         this.PanelWidth = panelWidth;
@@ -24,6 +24,8 @@ public class MyPanel extends JPanel implements KeyListener {
         label.setBounds(0, 0, PanelWidth, PanelHeight);
         PaintThread thread = new PaintThread(label);
         thread.start();
+        gravity=new Gravity(player);
+        gravity.start();
         moveThread = new MoveThread(this, player);
         thread1 = new Thread(moveThread);
         thread1.start();
@@ -33,8 +35,7 @@ public class MyPanel extends JPanel implements KeyListener {
 
         add(label);
 
-//        label.setBounds(0,0,PanelWidth,PanelHeight);
-//        repaint();
+
 
     }
 

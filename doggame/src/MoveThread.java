@@ -34,7 +34,7 @@ public class MoveThread implements Runnable {
 //                Upthread.join();
 
             } else if (player.Right) {
-                new Thread();
+//                new Thread();
                 try {
                     Thread.currentThread().sleep(5);
                 } catch (InterruptedException e) {
@@ -42,7 +42,16 @@ public class MoveThread implements Runnable {
                 }
 //                System.out.println("OK");
 //                System.out.println(Player.x);
-                Player.x += 10;
+                if (player.getRectangle().intersects(new BaseStone(666,500,80,20))){
+                    //红色的砖头
+                }else if (player.getRectangle().intersects(new BaseStone(600,460,40,72))){
+                    //一号墙
+//                    System.out.println("喷桩");
+                }
+                else if (player.getRectangle().intersects(new BaseStone(755,460,20,72))){
+                    //二号墙
+                }
+                else Player.x += 10;
             } else if (player.Left) {
                 try {
                     Thread.currentThread().sleep(5);
@@ -51,7 +60,14 @@ public class MoveThread implements Runnable {
                 }
 //                System.out.println("OK");
 //                System.out.println(Player.x);
-                Player.x -= 10;
+                if (player.getRectangle().intersects(new BaseStone(666,500,80,20))){
+                    //红色的砖头
+                }else if (player.getRectangle().intersects(new BaseStone(610,460,40,72))){
+                    //一号墙
+                }else if (player.getRectangle().intersects(new BaseStone(782,460,20,72))){
+                    //二号墙
+                }
+                else Player.x -= 10;
             }
 
         }
